@@ -39,7 +39,7 @@ $ python3 src/app.py
 
 In order to use the application, simply enter the name of the cryptocurrency in the text field and click on the search button.
 
-Our group:
+- Our group:
 Zhurunov Gabiden
 Imangali Alizhan
 Yermukhanbetov Zhaksylyk
