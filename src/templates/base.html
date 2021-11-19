@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+<br>
+<h1 style="margin-left: 45%">Final Project</h1>
+<br>
+<br>
+    <div style="display: flex;flex-direction: column;align-items: center;">
+        <form method="GET" style="display: flex;flex-direction: row;justify-content: center;align-items: center;width: 800px">
+            <input class="search form-control" type="text" name="q" placeholder="Enter name..." value={{ query }}>
+            <button class="search button  btn-primary" type="submit">
+                Search!
+            </button>
+        </form>
+        <br>
+    <div class = "container">
+        {% if data|length %}
+            {% for item in data %}
+                <div class="result">
+                    <a href={{ item['url'] }}>
+                        <h3 style="display: inline-block;line-height: 1.3;margin-bottom: 3px;">
+                            {{ item['heading'] }}
+                        </h3>
+                    </a>
+                    <div>
+                        <span>
+                            {{ item['paragraph'] }}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="result">
+                <h3 style="display: inline-block;line-height: 1.3;margin-bottom: 3px;">
+                    Nothing found!
+                </h3>
+            </div>
+        {% endif %}
+    </div>
+
+
+    </div>
+</body>
+
+</html>
